@@ -2,6 +2,7 @@ import geopandas as gpd
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import streamlit as st
 from utils.kde_processing import generate_kde
 
