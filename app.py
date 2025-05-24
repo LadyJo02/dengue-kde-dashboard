@@ -15,11 +15,19 @@ def load_data():
 
 # Filter KDE points
 def prepare_points(df, year):
-    df_year = df[df[str(year)] > 0]
+    df_year = df.copy()
+    df_year[str(year)] = pd.to_numeric(df_year[str(year)], errors='coerce').fillna(0).astype(int)
+
     points = []
     for _, row in df_year.iterrows():
-        points.extend([[row['centroid_lon'], row['centroid_lat']]] * int(row[str(year)]))
-    return np.array(points)
+        count = row[str(year)]
+        if count > 0:
+            points.extend([[row["centroid_lon"], row["centroid_lat"]]] * count)
+    
+    if not points:
+        return np.empty((2, 0))
+    
+    return np.array(points).T
 
 # Streamlit UI
 st.title("🦟 Dengue KDE Hotspot Dashboard")
