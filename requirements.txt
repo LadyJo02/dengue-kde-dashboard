@@ -1,7 +1,11 @@
 streamlit
 pandas
-geopandas
-matplotlib
 numpy
-rasterio
+matplotlib
+seaborn
+scipy
+geopandas
+shapely
+pyproj
 scikit-learn
+rasterio
