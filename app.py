@@ -82,7 +82,7 @@ with col2:
             norm=mcolors.Normalize(vmin=zi.min(), vmax=zi.max())
         )
         fig.colorbar(img, ax=ax, label="Density")
-        ax.set_title(f"🗺️ Dengue KDE Hotspot Map - {year} ({bw_label})")
+        ax.set_title(f"Dengue KDE Hotspot Map - {year} ({bw_label})")
         ax.set_xlabel("Longitude")
         ax.set_ylabel("Latitude")
         st.pyplot(fig)
