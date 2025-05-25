@@ -9,7 +9,6 @@ from utils.kde_processing import generate_kde
 
 # ------------------- Load Data -------------------
 @st.cache_data
-
 def load_data():
     df = pd.read_csv("data/dengue_climate_data.csv")
     gdf = gpd.read_file("data/gadm41_PHL_2.shp")
@@ -57,7 +56,7 @@ with col1:
     top5 = df_total.sort_values("Total_Cases", ascending=False).head(5)
 
     for _, row in top5.iterrows():
-        st.markdown(f"**{row['Place']}**")
+        st.markdown(f"**{row['place']}**")  # fixed column name
         st.markdown(f"- Total Cases: {int(row['Total_Cases'])}")
         st.markdown(f"- Avg Temperature: {round(row['Avg_Temp'], 2)}°C")
         st.markdown(f"- Avg Humidity: {round(row['Avg_Humidity'], 2)}%")
