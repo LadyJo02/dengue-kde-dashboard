@@ -76,7 +76,7 @@ with col1:
 
     for _, row in top5.iterrows():
         st.markdown(f"<div class='card'>", unsafe_allow_html=True)
-        st.markdown(f"**{row['place']}**")
+        st.markdown(f"**{row['City/Municipality']}**")
         st.markdown(f"- Total Cases: {int(row['Total_Cases'])}")
         st.markdown(f"- Avg Temperature: {round(row['Avg_Temp'], 2)}°C")
         st.markdown(f"- Avg Humidity: {round(row['Avg_Humidity'], 2)}%")
