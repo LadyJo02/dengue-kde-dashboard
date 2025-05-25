@@ -52,15 +52,15 @@ col1, col2 = st.columns([1, 2])
 with col1:
     st.subheader("📍 Top 5 Locations by Total Dengue Cases")
     df_total = df.copy()
-    df_total["Total_Cases"] = df[[str(y) for y in years]].sum(axis=1)
+    df_total["Total_Cases"] = df_total[[str(y) for y in years]].sum(axis=1)
     top5 = df_total.sort_values("Total_Cases", ascending=False).head(5)
 
     for _, row in top5.iterrows():
-        st.markdown(f"**{row['place']}**")  # fixed column name
+        st.markdown(f"**{row['City/Municipality']}**")
         st.markdown(f"- Total Cases: {int(row['Total_Cases'])}")
-        st.markdown(f"- Avg Temperature: {round(row['Avg_Temp'], 2)}°C")
+        st.markdown(f"- Avg Temperature: {round(row['Avg_Temperature'], 2)}°C")
         st.markdown(f"- Avg Humidity: {round(row['Avg_Humidity'], 2)}%")
-        st.markdown(f"- Avg Precipitation: {round(row['Avg_Precip'], 2) if not pd.isna(row['Avg_Precip']) else 'N/A'} mm")
+        st.markdown(f"- Avg Precipitation: {round(row['Avg_Precipitation'], 2) if not pd.isna(row['Avg_Precipitation']) else 'N/A'} mm")
         st.markdown("---")
 
 # ----- RIGHT: KDE Map -----
