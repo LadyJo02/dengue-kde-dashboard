@@ -78,9 +78,9 @@ with col1:
         st.markdown(f"<div class='card'>", unsafe_allow_html=True)
         st.markdown(f"**{row['City/Municipality']}**")
         st.markdown(f"- Total Cases: {int(row['Total_Cases'])}")
-        st.markdown(f"- Avg Temperature: {round(row['Avg_Temp'], 2)}°C")
+        st.markdown(f"- Avg Temperature: {round(row['Avg_Temperature'], 2)}°C")
         st.markdown(f"- Avg Humidity: {round(row['Avg_Humidity'], 2)}%")
-        st.markdown(f"- Avg Precipitation: {round(row['Avg_Precip'], 2) if not pd.isna(row['Avg_Precip']) else 'N/A'} mm")
+        st.markdown(f"- Avg Precipitation: {round(row['Avg_Precipitation'], 2) if not pd.isna(row['Avg_Precip']) else 'N/A'} mm")
         st.markdown("</div>", unsafe_allow_html=True)
 
 # ----- RIGHT: KDE Map -----
