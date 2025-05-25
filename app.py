@@ -1,3 +1,5 @@
+st.experimental_rerun()
+
 import geopandas as gpd
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
